@@ -1,19 +1,14 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +17,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -42,15 +38,19 @@
 }
 
 .app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
   font-family: Arial, sans-serif;
   padding: 20px;
-  display: flex;
 }
 
 .left-panel {
   width: 250px;
   padding-right: 20px;
   border-right: 1px solid #ccc;
+  overflow-y: auto;
+  height: 100%;
 }
 
 .left-panel h2 {
@@ -60,16 +60,24 @@
 .left-panel form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   margin-bottom: 20px;
+}
+
+.left-panel label {
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .left-panel input {
   padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .left-panel button {
-  padding: 5px;
+  margin-top: 15px;
+  padding: 10px;
   background-color: #4CAF50;
   color: white;
   border: none;
@@ -93,7 +101,12 @@
   border-radius: 5px;
 }
 
-.category-list li > div {
+.category-info {
+  display: flex;
+
+}
+
+.category-list li>div {
   margin-bottom: 5px;
 }
 
@@ -103,11 +116,25 @@
 
 .week-view {
   display: flex;
-  overflow-x: auto;
   flex-grow: 1;
+  overflow: hidden;
+  height: 100%;
 }
 
-.time-column, .day-column {
+.time-column,
+.day-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.time-column {
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.day-column {
+  flex: 1;
   min-width: 100px;
   border-right: 1px solid #ccc;
 }
@@ -118,21 +145,77 @@
   text-align: center;
   padding: 5px;
   border-bottom: 1px solid #ccc;
+  background-color: #f0f0f0;
 }
 
-.time-slot, .cell {
-  height: 60px;
-  border-bottom: 1px solid #eee;
+.time-slot,
+.cell {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
 }
 
 .time-slot {
-  font-size: 12px;
+  justify-content: flex-end;
+  padding-right: 5px;
   color: #666;
+}
+
+.cell {
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .cell:hover {
   background-color: #f0f0f0;
+}
+
+.category-list li button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.category-list li button:hover {
+  background-color: #d32f2f;
+}
+
+.clear-all-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.clear-all-button:hover {
+  background-color: #d32f2f;
+}
+
+.total-hours {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.total-hours h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.total-hours p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
 }
