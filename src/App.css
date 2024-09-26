@@ -40,3 +40,99 @@
 .read-the-docs {
   color: #888;
 }
+
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  display: flex;
+}
+
+.left-panel {
+  width: 250px;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.left-panel h2 {
+  margin-top: 0;
+}
+
+.left-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.left-panel input {
+  padding: 5px;
+}
+
+.left-panel button {
+  padding: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.left-panel button:hover {
+  background-color: #45a049;
+}
+
+.category-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.category-list li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.category-list li > div {
+  margin-bottom: 5px;
+}
+
+.category-list li input[type="color"] {
+  align-self: flex-end;
+}
+
+.week-view {
+  display: flex;
+  overflow-x: auto;
+  flex-grow: 1;
+}
+
+.time-column, .day-column {
+  min-width: 100px;
+  border-right: 1px solid #ccc;
+}
+
+.day-header {
+  height: 30px;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.time-slot, .cell {
+  height: 60px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-slot {
+  font-size: 12px;
+  color: #666;
+}
+
+.cell:hover {
+  background-color: #f0f0f0;
+}
